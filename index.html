@@ -29,23 +29,29 @@ Det finns många sätt att göra en webbplats mer tillgänglig, till exempel att
 <!DOCTYPE html>
 <html lang="en">
   <!-- KLAR Ta tillbaka den här!-->
-
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="A11Y NEWS"/>
     <link rel="stylesheet" href="style.css">
-    <!-- KLAR Endast en `<title>` används; flera kan orsaka oväntat beteende och påverka SEO samt tillgänglighet negativt. -->
     <title>A11y News</title>
-  </head>
+</head>
 
   <body>
     <!-- KLAR. Search-function i header Tog bort span så det bara är a href. Navigeringsmeny med dubblett-ID:n, inkonsekvent tabindex, och brutna länkar till en 404-sida. -->
     <section class="navigation__items">
-    <nav class="navigation">
+        <a href="#" class="logo__link">
+            <div class="logo">
+            <img src="/images/logo.png" class="logo__img" alt="Company logo which is a picture of a flower">
+            <h1 class="logo__h1">A11Y NEWS</h1>
+            <img src="/images/logo.png" class="logo__img" alt="Company logo which is a picture of a flower">
+          </div>
+        </a>
+      <nav class="navigation">
       <a class="navigation__item" href="#">Home</a>
-      <a class="navigation__item" href="world.html">World</a>
-      <a class="navigation__item" href="sports.html">Sports</a>
-      <a class="navigation__item" href="entertainment.html">Entertainment</a>
+      <a class="navigation__item" href="#">World</a>
+      <a class="navigation__item" href="#">Sports</a>
+      <a class="navigation__item" href="#">Entertainment</a>
     </nav>
     <div class="navigation__search">
       <input class ="navigation__searchfield" type="search" placeholder="Search on this site" />
@@ -53,10 +59,53 @@ Det finns många sätt att göra en webbplats mer tillgänglig, till exempel att
     </div>
     </section>
 
-    <!-- KLAR gjorde om p till h1 eftersom det är den första texten och det följer logiken. (texten är inte längre osynlig och klassen har ändrats) Dold text och klickbar div. 
+    <section class="breakingNews">
+      <!-- KLART Ändrade till h2 och sedan h3 (tog bort en och la till en class) Två <h1>-taggar i .container kan påverka tillgänglighet och SEO. -->
+        <!-- <marquee>(rullande text) kan vara en intressant effekt på en hemsida, men det kan också vara distraherande för besökarna. -->
+        <h2 class="breakingNews__h2">Breaking News</h2>
+        <p class="breakingNews__text">
+          Scientists have discovered a new deep-sea fish with bioluminescent
+          fins off the coast of Australia. The unnamed species is believed to
+          have unique traits that could contribute to future medical research
+          and biotechnology.
+        </p>
+        <a class="breakingNews__link" href="#">Click here!</a>
+    </section>
+
+      <!--Tog bort länkgen som inte gjorde något. gjorde rubriken till en h4. Bilderna saknas i dokumentet så jag hittade några passande. Texten nedanför indikerar även att bilderna ska leda någonstans så jag laddade ner bilder till dokumentet. Klicka på artikeln för att visa ett meddelande, men den utför egentligen inget. -->
+      <section class="newyear">
+        <h3 class="newyear__h3">Lunar New Year: Celebrate with us!</h3>
+    
+        <!-- Image Container -->
+        <div class="newyear__image-container">
+            <a href="#ocean" class="newyear__image-link">
+                <img src="/images/ocean.png" alt="Image of a resort by the ocean." />
+            </a>
+            <a href="#city" class="newyear__image-link">
+                <img src="/images/city.png" alt="Image of a city with a lake running through it."/>
+            </a>
+            <a href="#family" class="newyear__image-link">
+                <img src="/images/family.png" alt="Image of a family with sparklers." />
+            </a>
+        </div>
+        <p class="newyear__linkInfo">Access the news by pressing the images</p>
+    </section>
+
+      <!-- Videor kräver mycket prestanda, kan vi ändra eller ta bort för att åstakomma bättre resultat -->
+<!--       <div class="article">
+        <video
+          autoplay
+          muted
+          loop
+          src="https://www.w3schools.com/html/mov_bbb.mp4"
+        ></video>
+        <img src="http://media.giphy.com/media/xT9IgG50Fb7Mi0prBC/giphy.gif" />
+      </div> -->
+    </section>
+        <!-- KLAR gjorde om p till h1 eftersom det är den första texten och det följer logiken. (texten är inte längre osynlig och klassen har ändrats) Dold text och klickbar div. 
      .hidden-text är nästan osynlig p.g.a. låg opacity och roterad tex -->
-    <section class="clickhere">
-        <h1 class="clickhere__found-text">This text is visible.</p>
+     <section class="clickhere">
+        <h4 class="clickhere__found-text">This text is visible.</h4>
         <button class="clickhere__button">Do NOT click here!</button>
         <!-- En irriterande annons som alltid syns och innehåller en snurrande bild samt en vilseledande text -->
     <div id="fake-ad" class="fake-ad" style="display:none">
@@ -73,59 +122,6 @@ Det finns många sätt att göra en webbplats mer tillgänglig, till exempel att
         <button class="fake-ad__close">Close</button>
       </div>
     </section>
-
-
-    <section class="breakingNews">
-      <!-- KLART Ändrade till h2 och sedan h3 (tog bort en och la till en class) Två <h1>-taggar i .container kan påverka tillgänglighet och SEO. -->
-      <h2 class="breakingNews__h2">A11y News</h1>
-        <!-- <marquee>(rullande text) kan vara en intressant effekt på en hemsida, men det kan också vara distraherande för besökarna. -->
-        <h3 class="breakingNews__h3">Breaking News:</h2>
-        <p class="breakingNews__text">
-          Scientists have discovered a new deep-sea fish with bioluminescent
-          fins off the coast of Australia. The unnamed species is believed to
-          have unique traits that could contribute to future medical research
-          and biotechnology.
-        </p>
-        <a class="breakingNews__link" href="world.html">Click here!</a>
-    </section>
-
-      <!--Tog bort länkgen som inte gjorde något. gjorde rubriken till en h4. Bilderna saknas i dokumentet så jag hittade några passande. Texten nedanför indikerar även att bilderna ska leda någonstans så jag laddade ner bilder till dokumentet. Klicka på artikeln för att visa ett meddelande, men den utför egentligen inget. -->
-      <section class="newyear">
-        <h4 class="newyear__h4">Lunar New Year: Celebrate with us!</div>
-
-        <!-- Bilder visas inte, varför? OCH KOM IHÅG ALT -->
-        <div class="newyear__image-container">
-          <img src="/images/ocean.jpg" />
-          <img src="/images/city.jpg" />
-          <img src="/images/family.jpg" />
-        </div>
-
-        <p class="newyear__linkInfo">Access the news by pressing the images</p>
-
-    </section>
-
-      <!-- Allt för stor bild. För att motverka prestanda problem, ha koll på storleken på bilden -->
-      <div class="article" style="display: block">
-        <p class="headline">Se en 50MB bild ladda långsamt!</p>
-        <img
-          src="http://upload.wikimedia.org/wikipedia/commons/3/3f/JPEG_example_flower.jpg"
-          width="50000"
-        />
-      </div>
-
-      <!-- Videor kräver mycket prestanda, kan vi ändra eller ta bort för att åstakomma bättre resultat -->
-      <div class="article">
-        <video
-          autoplay
-          muted
-          loop
-          src="https://www.w3schools.com/html/mov_bbb.mp4"
-        ></video>
-        <img src="http://media.giphy.com/media/xT9IgG50Fb7Mi0prBC/giphy.gif" />
-      </div>
-    </section>
-
-    
 
     <script src="script.js" defer></script>
   </body>

@@ -9,7 +9,7 @@
 
 /* text-shadow bara i navigationen. Tog bort letter-spacing och word-spacing så man inte behöver göra illa nacken när man läser ett ord. Tog bort alla inställningar för hur texterna ser ut på hela sidan för att tillämpa olika inställningar för olika ändamål och för att texterna inte ska bli så långa och ta stor plats. Ställer in bakgrundsfärg, textfärg och textstil för hela sidan */
 body {
-  background: white;
+  background: linear-gradient(#9EA3B0, #FAE1DF);
 } 
 
 /* TAR BORT DENNA. Tar bort understrykning på länkar och ändrar färg 
@@ -56,16 +56,42 @@ a {
   padding: 20px;
 } */ 
 
+.logo {
+  display: flex;
+  justify-content: center;
+}
+
+.logo__link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.logo__img {
+  width: 5rem;
+}
+
+.logo__h1 {
+  background-color: white;
+  text-align: center;
+  padding-top: 1.5rem;
+  font-weight: bold;
+  color: #c04242ef;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}
+
 /* Navigeringsmeny med mörk bakgrund och jämnt fördelade element */
 .navigation {
-  background-color: #3b3b3b;
-  padding: 30px;
+  padding: 2rem;
   display: flex;
   justify-content: space-between;
-  font-size: 40px;
+  font-size: 36px;
   font-weight: bold;
   text-shadow: 5px 5px 10px black;
-  padding-top: 4rem;
+  padding-top: 2rem;
+}
+
+.navigation__items {
+  background: linear-gradient(90deg, #0D1F2D, #546A7B);
 }
 
 /* Navigeringslänkar */
@@ -92,24 +118,42 @@ a {
 }
 
 .navigation__item:hover {
-  color: cyan;
+  transform: scale(1.1)
 }
 
 /* Search field is now in the middle of the page and bigger. */
 .navigation__search {
   display: flex;
   justify-content: center;
-  background-color: #3b3b3b;
   padding-bottom: 1rem;
 }
 
 .navigation__searchfield {
-  width: 10rem;  
+  width: 30%;
+  padding: 12px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  font-size: 16px;
+  transition: all 0.3s ease-in-out;
   height: 1.5rem;
+  border-radius: 0.5rem;
+}
+
+.navigation__searchfield:focus {
+  border-color: #187498;
+  box-shadow: 0 0 10px rgba(24, 116, 152, 0.5);
 }
 
 .navigation__button {
   width: 4rem;
+  border-radius: 0.5rem;
+  margin-left: 0.5rem;
+  color: black;
+  text-align: center;
+  text-decoration: none;
+  border: none;
+  font-weight: bold;
 }
 
 .navigation__button:hover {
@@ -118,43 +162,57 @@ a {
 
 .clickhere {
   text-align: center;
-  padding: 3rem 0 3rem 0;
+  padding-bottom: 2rem;
   margin: 1rem auto;
-  background-color: #cecece;
+  background-color: white;
   width: 70%;
   max-width: 1200px;
+  border-radius: 1rem;
+  margin-bottom: 5rem;
 }
 
 .clickhere__button {
-  width: auto;
-  padding: 0.4rem;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
+  width: 10rem;
+  height: 2rem;
+  border-radius: 0.5rem;
+  border: 2px solid #0D1F2D;
+  margin-left: 0.5rem;
+  margin-top: 1rem;;
+  color: black;
+  text-align: center;
+  text-decoration: none;
+  font-weight: bold;
 }
 
 .clickhere__button:hover {
   cursor: pointer;
 }
 
+.clickhere__found-text {
+  font-size: 1.5rem;
+  background:#546A7B;
+  padding: 1rem;
+  color: white;
+}
+
 .breakingNews {
   text-align: center;
   padding: 0 0 3rem 0;
   margin: 1rem auto;
-  background-color: #cecece;
+  background-color: white;
   width: 70%;
   max-width: 1200px;
+  border-radius: 1rem;
 }
 
 .breakingNews__h2 {
   padding: 1rem;
-  background:#3b3b3b;
+  margin-bottom: 1rem;
+  background: #546A7B;
   color: white;
   font-size: 2rem;
-}
-
-.breakingNews__h3 {
-  padding: 1rem;
-  color: black;
+  border-top-right-radius: 1rem;
+  border-top-left-radius: 1rem;
 }
 
 /* Smalare textruta så det är lättare att skanna */
@@ -176,35 +234,61 @@ a {
 /* Bilderna placeras i en rad, centrerar dem horisontellt och vertikalt och lägger till ett mellanrum mellan bilderna */
 .newyear__image-container {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
+  justify-content: space-around;
+  gap: 20px;
+  padding: 0 0.5rem 0 0.5rem;
+}
+
+.newyear__image-link {
+  display: block; 
 }
 
 /* Definierar storleken på bilderna och gör att de täcker det angivna utrymmet utan att bli förvrängda  */
 .newyear__image-container img {
-  width: 150px;
-  height: 150px;
-  object-fit: cover;
+  width: 100%;
+  max-width: 300px;
+  max-height: 10rem;
+  transition: transform 0.3s ease;
 }
 
-/* Artikel med prickad orange linje och en radial gradient som bakgrund */
+.newyear__image-container img:hover {
+  transform: scale(1.1);  /* Scale the image up to 110% */
+}
+
+/* TOG BORT ORANGEA Artikel med prickad orange linje och en radial gradient som bakgrund */
 .newyear {
-  border-bottom: 10px dotted grey;
-  margin-bottom: 50px;
-  padding-bottom: 50px;
-  background: radial-gradient(circle, black, transparent);
+  width: 70%;
+  align-content: center;
   text-align: center;
+  margin: 1rem auto;
+  max-width: 1200px;
+  background-color:white;
+  border-radius: 1rem;
 }
 
-/* Input-fält i en container med kolumnlayout och flytande positionering */
+.newyear__h3 {
+  font-size: 1.5rem;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  background-color: #546A7B;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  color: white;
+}
+/* HOVER EFFEKT FÖR ATT FÖRTYDLIGA ATT DE GÅR ATT KLICKA PÅ */ 
+.newyear__linkInfo {
+  padding: 1rem;
+  
+}
+
+/* TOG BORT Input-fält i en container med kolumnlayout och flytande positionering 
 .input-container {
   display: flex;
   flex-direction: column;
   float: right;
   width: 50%;
-  background: #ffffff00; /* Genomskinlig bakgrund */
-}
+  background: #ffffff00;  Genomskinlig bakgrund
+} */
 
 
 /* Fake-ad stannar kvar men nu är det tydligt hur man ska stänga den och den kommer bara fram när man tryckt på en knapp. En "fake ad" med blinkande bakgrund och fast position längst ner */
