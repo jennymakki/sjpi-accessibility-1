@@ -31,7 +31,7 @@ a {
   font-size: 50px;
   padding: 20px;
   border: 5px dashed black;
-  cursor: not-allowed;
+  cursor: pointer;
   text-transform: uppercase;
 }
 
@@ -81,16 +81,26 @@ a {
 }
 
 /* Navigeringslänkar */
-.navigation .nav-item a {
+.navigation__item {
   color: #ffffff;
   padding: 10px;
   text-decoration: none;
 }
 
-/* Bakgrundsfärg vid hover på navigationslänkar */
+.navigation__item:hover {
+  color: red;
+}
+
+.search__field {
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+/* ÄNDRAT TILL ANNAN FÄRG Bakgrundsfärg vid hover på navigationslänkar
 .navigation .nav-item:hover a {
   background-color: #acacac40;
-}
+} */
 
 /* Bilderna placeras i en rad, centrerar dem horisontellt och vertikalt och lägger till ett mellanrum mellan bilderna */
 .image-container {

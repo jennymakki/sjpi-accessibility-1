@@ -1,4 +1,4 @@
-// Simulerad blockering av tråden
+/* // Simulerad blockering av tråden
 setInterval(() => {
   let start = Date.now()
   while (Date.now() - start < 1000) {}
@@ -39,3 +39,4 @@ setTimeout(() => {
 for (let i = 0; i < 100000; i++) {
   console.log(i)
 }
+ */
