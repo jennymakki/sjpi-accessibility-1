@@ -75,38 +75,37 @@ Det finns många sätt att göra en webbplats mer tillgänglig, till exempel att
     </section>
 
 
-    <section class="container">
-      <!-- KLART (tog bort en och la till en class) Två <h1>-taggar i .container kan påverka tillgänglighet och SEO. -->
-      <h1 class="A11y__news">A11y News</h1>
-
-      <div class="article">
+    <section class="breakingNews">
+      <!-- KLART Ändrade till h2 och sedan h3 (tog bort en och la till en class) Två <h1>-taggar i .container kan påverka tillgänglighet och SEO. -->
+      <h2 class="breakingNews__h2">A11y News</h1>
         <!-- <marquee>(rullande text) kan vara en intressant effekt på en hemsida, men det kan också vara distraherande för besökarna. -->
-        <h2 class="breaking__news">Breaking News: ...!</h2>
-        <p>
+        <h3 class="breakingNews__h3">Breaking News:</h2>
+        <p class="breakingNews__text">
           Scientists have discovered a new deep-sea fish with bioluminescent
           fins off the coast of Australia. The unnamed species is believed to
           have unique traits that could contribute to future medical research
           and biotechnology.
         </p>
-        <a href="404.html">click here!</a>
-      </div>
+        <a class="breakingNews__link" href="world.html">Click here!</a>
+    </section>
 
-      <!-- Klicka på artikeln för att visa ett meddelande, men den utför egentligen inget. -->
-      <div class="article" onclick="alert('This does nothing!')">
-        <div>Lunar New Year: Celebrate with us!</div>
+      <!--Tog bort länkgen som inte gjorde något. gjorde rubriken till en h4. Bilderna saknas i dokumentet så jag hittade några passande. Texten nedanför indikerar även att bilderna ska leda någonstans så jag laddade ner bilder till dokumentet. Klicka på artikeln för att visa ett meddelande, men den utför egentligen inget. -->
+      <section class="newyear">
+        <h4 class="newyear__h4">Lunar New Year: Celebrate with us!</div>
 
-        <!-- Bilder visas inte, varför? -->
-        <div class="image-container">
+        <!-- Bilder visas inte, varför? OCH KOM IHÅG ALT -->
+        <div class="newyear__image-container">
           <img src="/images/ocean.jpg" />
           <img src="/images/city.jpg" />
           <img src="/images/family.jpg" />
         </div>
 
-        <p>Access the news by pressing the images</p>
-      </div>
+        <p class="newyear__linkInfo">Access the news by pressing the images</p>
+
+    </section>
 
       <!-- Allt för stor bild. För att motverka prestanda problem, ha koll på storleken på bilden -->
-      <div class="article" style="display: none">
+      <div class="article" style="display: block">
         <p class="headline">Se en 50MB bild ladda långsamt!</p>
         <img
           src="http://upload.wikimedia.org/wikipedia/commons/3/3f/JPEG_example_flower.jpg"
