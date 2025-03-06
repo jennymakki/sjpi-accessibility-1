@@ -39,24 +39,42 @@ Det finns många sätt att göra en webbplats mer tillgänglig, till exempel att
   </head>
 
   <body>
-    <!-- KLAR Tog bort span så det bara är a href. Navigeringsmeny med dubblett-ID:n, inkonsekvent tabindex, och brutna länkar till en 404-sida. -->
+    <!-- KLAR. Search-function i header Tog bort span så det bara är a href. Navigeringsmeny med dubblett-ID:n, inkonsekvent tabindex, och brutna länkar till en 404-sida. -->
+    <section class="navigation__items">
     <nav class="navigation">
       <a class="navigation__item" href="#">Home</a>
       <a class="navigation__item" href="world.html">World</a>
       <a class="navigation__item" href="sports.html">Sports</a>
       <a class="navigation__item" href="entertainment.html">Entertainment</a>
     </nav>
-
-    <!-- NÄSTAN KLAR - BEHÖVER JAVASCRIPT. Svåråtkomligt inputfällt -->
-    <section class="search__field">
-      <input type="search" placeholder="Enter text" />
-      <button class="search__button">Search</button>
+    <div class="navigation__search">
+      <input class ="navigation__searchfield" type="search" placeholder="Search on this site" />
+      <button class="navigation__button">Search</button>
+    </div>
     </section>
 
-    <!-- KLAR men kanske finns bättre än p-tag?? (texten är inte längre osynlig och klassen har ändrats) Dold text och klickbar div. 
+    <!-- KLAR gjorde om p till h1 eftersom det är den första texten och det följer logiken. (texten är inte längre osynlig och klassen har ändrats) Dold text och klickbar div. 
      .hidden-text är nästan osynlig p.g.a. låg opacity och roterad tex -->
-    <p class="found-text">This text is no longer invisible.</p>
-    <button class="button">Click here!</button>
+    <section class="clickhere">
+        <h1 class="clickhere__found-text">This text is visible.</p>
+        <button class="clickhere__button">Do NOT click here!</button>
+        <!-- En irriterande annons som alltid syns och innehåller en snurrande bild samt en vilseledande text -->
+    <div id="fake-ad" class="fake-ad" style="display:none">
+        <div class="top-section">
+          <div class="image-container">
+            <img class="rotating-image" src="images/chest.png" />
+          </div>
+          <p>🎉 You have NOT won $10,000! 🎉</p>
+          <div class="image-container">
+            <img class="rotating-image" src="images/chest.png" />
+          </div>
+        </div>
+        <p class="btext">Do NOT click here to collect your money!</p>
+        <button class="fake-ad__close">Close</button>
+      </div>
+    </section>
+
+
     <section class="container">
       <!-- KLART (tog bort en och la till en class) Två <h1>-taggar i .container kan påverka tillgänglighet och SEO. -->
       <h1 class="A11y__news">A11y News</h1>
@@ -70,7 +88,7 @@ Det finns många sätt att göra en webbplats mer tillgänglig, till exempel att
           have unique traits that could contribute to future medical research
           and biotechnology.
         </p>
-        <a href="404.html">Click here!</a>
+        <a href="404.html">click here!</a>
       </div>
 
       <!-- Klicka på artikeln för att visa ett meddelande, men den utför egentligen inget. -->
@@ -108,19 +126,7 @@ Det finns många sätt att göra en webbplats mer tillgänglig, till exempel att
       </div>
     </section>
 
-    <!-- En irriterande annons som alltid syns och innehåller en snurrande bild samt en vilseledande text -->
-    <div id="fake-ad">
-      <div class="top-section">
-        <div class="image-container">
-          <img class="rotating-image" src="images/chest.png" />
-        </div>
-        <p>🎉 You have won $10,000! 🎉</p>
-        <div class="image-container">
-          <img class="rotating-image" src="images/chest.png" />
-        </div>
-      </div>
-      <p class="btext">Click here to collect your money!</p>
-    </div>
+    
 
     <script src="script.js" defer></script>
   </body>
