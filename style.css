@@ -85,6 +85,25 @@ body {
     font-size: 14px;
     padding: 5px;
   }
+
+  .breakingNews,
+  .newyear,
+  .movie,
+  .clickhere {
+    max-width: 600px;
+    width: 100%;
+  }
+  #myVideo {
+    width: 100%;
+    height: auto;
+  }
+
+  .movie__button-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 .navigation__item:hover {
@@ -128,44 +147,6 @@ body {
 .navigation__button:hover {
   cursor: pointer;
   transform: scale(1.05);
-}
-
-.clickhere {
-  text-align: center;
-  padding-bottom: 2rem;
-  margin: 1rem auto;
-  background-color: white;
-  width: 70%;
-  max-width: 1200px;
-  border-radius: 1rem;
-  margin-bottom: 4rem;
-}
-
-.clickhere__button {
-  width: 10rem;
-  height: 2rem;
-  border-radius: 0.5rem;
-  border: 2px solid #0d1f2d;
-  margin-left: 0.5rem;
-  margin-top: 1rem;
-  color: black;
-  text-align: center;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-.clickhere__button:hover {
-  cursor: pointer;
-  transform: scale(1.05);
-}
-
-.clickhere__found-text {
-  font-size: 1.5rem;
-  background: #546a7b;
-  padding: 1rem;
-  color: white;
-  border-top-left-radius: 1rem;
-  border-top-right-radius: 1rem;
 }
 
 .breakingNews {
@@ -255,7 +236,7 @@ body {
   margin-bottom: 1rem;
 }
 
-.movie__h5 {
+.movie__h4 {
   font-size: 1.5rem;
   background: #546a7b;
   padding: 1rem;
@@ -288,6 +269,45 @@ body {
 .movie__button:hover {
   cursor: pointer;
   transform: scale(1.05);
+}
+
+
+.clickhere {
+  text-align: center;
+  padding-bottom: 2rem;
+  margin: 1rem auto;
+  background-color: white;
+  width: 70%;
+  max-width: 1200px;
+  border-radius: 1rem;
+  margin-bottom: 4rem;
+}
+
+.clickhere__button {
+  width: 10rem;
+  height: 2rem;
+  border-radius: 0.5rem;
+  border: 2px solid #0d1f2d;
+  margin-left: 0.5rem;
+  margin-top: 1rem;
+  color: black;
+  text-align: center;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.clickhere__button:hover {
+  cursor: pointer;
+  transform: scale(1.05);
+}
+
+.clickhere__h5 {
+  font-size: 1.5rem;
+  background: #546a7b;
+  padding: 1rem;
+  color: white;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
 }
 
 /* old styling that I have not touched starts here */
