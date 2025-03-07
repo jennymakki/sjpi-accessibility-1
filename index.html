@@ -21,18 +21,19 @@
           <img
             src="images/logo.png"
             class="logo__img"
-            alt="Company logo which is a picture of a flower"
+            aria-hidden="true"
           />
         </div>
       </a>
       <nav class="navigation">
-        <a class="navigation__item" href="#">Home</a>
+        <a class="navigation__item" href="#"aria-current="page">Home</a>
         <a class="navigation__item" href="#">World</a>
         <a class="navigation__item" href="#">Sports</a>
         <a class="navigation__item" href="#">Entertainment</a>
       </nav>
       <div class="navigation__search">
-        <input
+        <label for="search" class="visually-hidden">Search the site</label>
+        <input id="search"
           class="navigation__searchfield"
           type="search"
           placeholder="Search..."
@@ -77,29 +78,32 @@
 
     <section class="movie">
       <h4 class="movie__h4">Video</h4>
-      <video id="myVideo" muted loop>
-        <source src="images/mov_bbb.mp4" type="video/mp4" alt="Video of a human-sized bunny standing on a field looking at a butterfly flying by that gets squished by a falling apple"/>
+      <video id="myVideo" muted loop aria-describedby="video-description">
+        <source src="images/mov_bbb.mp4" type="video/mp4" />
+        <track src="captions.vtt" kind="captions" srclang="en" label="English captions">
         Your browser does not support the video tag.
       </video>
+      <p id="video-description">
+        Video of a human-sized bunny standing on a field looking at a butterfly flying by, which gets squished by a falling apple.
+      </p>
       <div class="movie__button-container">
-        <button class="movie__button" onclick="playVideo()">Play Video</button>
-        <button class="movie__button" onclick="pauseVideo()">
-          Pause Video
+        <button class="movie__button" onclick="playVideo()" aria-controls="myVideo">Play Video</button>
+        <button class="movie__button" onclick="pauseVideo()" aria-controls="myVideo">Pause Video</button>
         </button>
       </div>
     </section>
 
     <section class="clickhere">
-      <h5 class="clickhere__h5">This text is visible.</h5>
-      <button class="clickhere__button">Do NOT click here!</button>
+      <h5 class="clickhere__h5">Fake ad</h5>
+      <button class="clickhere__button">See fake ad</button>
       <div id="fake-ad" class="fake-ad" style="display: none">
         <div class="top-section">
           <div class="image-container">
-            <img class="rotating-image" src="images/chest.png" />
+            <img class="rotating-image" src="images/chest.png" alt="Picture of a treasure chest" />
           </div>
           <p>🎉 You have NOT won $10,000! 🎉</p>
           <div class="image-container">
-            <img class="rotating-image" src="images/chest.png" />
+            <img class="rotating-image" src="images/chest.png" aria-hidden="true" />
           </div>
         </div>
         <p class="btext">Do NOT click here to collect your money!</p>

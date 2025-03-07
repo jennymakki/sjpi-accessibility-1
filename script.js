@@ -21,3 +21,14 @@ function pauseVideo() {
   var video = document.getElementById("myVideo");
   video.pause();
 }
+
+document.querySelector(".clickhere__button").addEventListener("click", function() {
+  document.getElementById("fake-ad").style.display = "block";
+  document.querySelector(".fake-ad__close").focus();
+});
+
+document.addEventListener("keydown", function(event) {
+  if (event.key === "Escape") {
+      document.getElementById("fake-ad").style.display = "none";
+  }
+});
