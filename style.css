@@ -53,6 +53,7 @@ body {
   text-decoration: none;
 }
 
+#visually-hidden,
 .visually-hidden {
   position: absolute;
   width: 1px;
